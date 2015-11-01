@@ -12,6 +12,9 @@ public class MainFragment extends Fragment {
 
     private RecyclerView mRootView;
 
+    public static Fragment newInstance() {
+        return new MainFragment();
+    }
 
     @Nullable
     @Override
@@ -20,20 +23,14 @@ public class MainFragment extends Fragment {
         return mRootView;
     }
 
-
-    @Override public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         initRecyclerView();
     }
 
-
     private void initRecyclerView() {
         mRootView.setAdapter(new FakePageAdapter(20));
-    }
-
-
-    public static Fragment newInstance() {
-        return new MainFragment();
     }
 
 }

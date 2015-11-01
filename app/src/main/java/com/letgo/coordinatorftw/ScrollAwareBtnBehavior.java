@@ -30,7 +30,7 @@ public class ScrollAwareBtnBehavior extends CoordinatorLayout.Behavior {
             final View directTargetChild,
             final View target, final int nestedScrollAxes) {
         return nestedScrollAxes == ViewCompat.SCROLL_AXIS_VERTICAL ||
-        super.onStartNestedScroll(coordinatorLayout, child, directTargetChild, target, nestedScrollAxes);
+                super.onStartNestedScroll(coordinatorLayout, child, directTargetChild, target, nestedScrollAxes);
     }
 
     @Override

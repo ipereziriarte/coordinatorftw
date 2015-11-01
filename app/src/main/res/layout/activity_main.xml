@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.letgo.coordinatorftw.MainActivity">
@@ -12,30 +12,31 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
         <android.support.v7.widget.Toolbar
             android:id="@+id/main.toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="?attr/actionBarSize"
             android:background="?colorPrimary"
-            android:title="@string/app_name"
             android:elevation="4dp"
-            app:theme="@style/ThemeOverlay.AppCompat.Dark"
-            app:title="@string/app_name"
+            android:minHeight="?attr/actionBarSize"
+            android:title="@string/app_name"
             app:layout_scrollFlags="scroll|enterAlways"
-            />
+            app:theme="@style/ThemeOverlay.AppCompat.Dark"
+            app:title="@string/app_name" />
+
     </android.support.design.widget.AppBarLayout>
+
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
+
     <Button
         android:id="@+id/coordinated_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_gravity="center_horizontal|bottom"
-        android:text="Button"
-        app:layout_behavior="com.letgo.coordinatorftw.ScrollAwareBtnBehavior"/>
+        android:gravity="center"
+        android:text="@string/btn_label"
+        app:layout_behavior="com.letgo.coordinatorftw.ScrollAwareBtnBehavior" />
 </android.support.design.widget.CoordinatorLayout>
