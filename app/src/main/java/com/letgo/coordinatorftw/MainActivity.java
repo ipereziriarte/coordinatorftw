@@ -8,6 +8,8 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Button button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,6 +20,12 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager manager = getFragmentManager();
         manager.beginTransaction().add(R.id.fragment_container, MainFragment.newInstance()).commit();
 
-        Button button = (Button) findViewById(R.id.coordinated_btn);
+        button = (Button) findViewById(R.id.coordinated_btn);
+
     }
+
+    public Button getButton() {
+        return button;
+    }
+
 }

@@ -5,11 +5,16 @@ import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewPropertyAnimatorListener;
 import android.support.v4.view.animation.FastOutSlowInInterpolator;
+import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.Interpolator;
 
-public class ScrollAwareBtnBehavior extends CoordinatorLayout.Behavior {
+/**
+ * Defines the behavior of the button relative to the parent layout
+ */
+@SuppressWarnings("unused")
+public class ScrollAwareBtnBehavior extends CoordinatorLayout.Behavior<View> {
 
     private static final Interpolator INTERPOLATOR = new FastOutSlowInInterpolator();
     private boolean isAnimatingOut = false;
@@ -23,6 +28,11 @@ public class ScrollAwareBtnBehavior extends CoordinatorLayout.Behavior {
     @SuppressWarnings("unused")
     public ScrollAwareBtnBehavior(Context context, AttributeSet attrs) {
         super();
+    }
+
+    @Override
+    public boolean layoutDependsOn(final CoordinatorLayout parent, final View child, final View dependency) {
+        return dependency instanceof RecyclerView;
     }
 
     @Override
