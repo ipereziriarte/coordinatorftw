@@ -14,7 +14,7 @@ import android.view.animation.Interpolator;
  * Defines the behavior of the button relative to the parent layout
  */
 @SuppressWarnings("unused")
-public class ScrollAwareBtnBehavior extends CoordinatorLayout.Behavior<View> {
+public class FadeBtnBehavior extends CoordinatorLayout.Behavior<View> {
 
     private static final Interpolator INTERPOLATOR = new FastOutSlowInInterpolator();
     private boolean isAnimatingOut = false;
@@ -26,7 +26,7 @@ public class ScrollAwareBtnBehavior extends CoordinatorLayout.Behavior<View> {
      * @param attrs the attributes for the layout theme
      */
     @SuppressWarnings("unused")
-    public ScrollAwareBtnBehavior(Context context, AttributeSet attrs) {
+    public FadeBtnBehavior(Context context, AttributeSet attrs) {
         super();
     }
 
@@ -65,18 +65,18 @@ public class ScrollAwareBtnBehavior extends CoordinatorLayout.Behavior<View> {
                 .setListener(new ViewPropertyAnimatorListener() {
                     @Override
                     public void onAnimationStart(final View view) {
-                        ScrollAwareBtnBehavior.this.isAnimatingOut = true;
+                        FadeBtnBehavior.this.isAnimatingOut = true;
                     }
 
                     @Override
                     public void onAnimationEnd(final View view) {
-                        ScrollAwareBtnBehavior.this.isAnimatingOut = false;
+                        FadeBtnBehavior.this.isAnimatingOut = false;
                         view.setVisibility(View.GONE);
                     }
 
                     @Override
                     public void onAnimationCancel(final View view) {
-                        ScrollAwareBtnBehavior.this.isAnimatingOut = false;
+                        FadeBtnBehavior.this.isAnimatingOut = false;
                     }
                 }).start();
     }
